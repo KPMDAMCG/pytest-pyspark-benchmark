@@ -1,0 +1,10 @@
+name: pytest-pyspark-benchmark
+channels:
+  - conda-forge
+dependencies:
+  - python=3.6
+
+  - openjdk=8
+  - pyspark
+  - pytest
+  - pytest-xdist
