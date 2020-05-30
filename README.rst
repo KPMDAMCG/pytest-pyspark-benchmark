@@ -15,24 +15,20 @@ Test execution
 
 .. code-block:: bash
 
-    $ pytest test_pyspark.py --durations 5
-    ========================================== test session starts ==========================================
-    platform linux -- Python 3.6.10, pytest-5.4.2, py-1.8.1, pluggy-0.13.1
-    rootdir: /home/dima/Projects/pytest-pyspark-benchmark
-    collected 50 items
+    # Local spark, one pytest session
+    $ pytest test_pyspark.py --durations 5y
 
-    test_pyspark.py ..................................................                                [100%]
+    # Local spark, 8 pytest sessions
+    $ pytest test_pyspark.py --durations 5 -n 8
 
-    ======================================= slowest 5 test durations ========================================
-    3.30s call     test_pyspark.py::test_to_date[2020-05-10 10:30:000]
-    3.20s setup    test_pyspark.py::test_to_date[2020-05-10 10:30:000]
-    1.00s teardown test_pyspark.py::test_to_date[2020-05-10 10:30:0049]
-    0.18s call     test_pyspark.py::test_to_date[2020-05-10 10:30:0011]
-    0.16s call     test_pyspark.py::test_to_date[2020-05-10 10:30:002]
-    ==================================== 50 passed, 2 warnings in 12.43s ====================================
+    # Remote spark, one pytest session
+    $ pytest test_pyspark.py --durations 5 --pyspark spark://localhost:7077
 
-Server mode
-===========
+    # Remote spark, 8 pytest sessions
+    $ pytest test_pyspark.py --durations 5 --pyspark spark://localhost:7077 -n 8
+
+Server mode setup
+=================
 
 .. code-block:: bash
 
