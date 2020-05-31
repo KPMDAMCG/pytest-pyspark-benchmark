@@ -131,3 +131,5 @@ Mac 2019
 :CPU: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz 6 cores, 12 threads
 :Memory: 32GB
 :Storage: 1TB NVMe
+
+``pytest -n2`` and ``pytest -n 4`` take about the same time. The execution time increases for larger ``-n``.
